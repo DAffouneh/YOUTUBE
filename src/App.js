@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import Modal from './Modal';
+import SearchBar from './SearchBar';
+import Youtube from './Youtube'
+const App =()=> {
+conat[videos,setVideos]=useState([]);
+const searchHandler = async (termFromSearchBar)=>
+{
+  const res = await Youtube.get('./search', {
+    params : {
+      q:termFromSearchBar
+    }
+  })
+  setVideos(res.data.items)
 
-function App() {
+};
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Modal>
+       <div className="App">
+      <SearchBar clickSearchHandler={searchHandler}></SearchBar>
+      
     </div>
+    </Modal>
+    
   );
 }
 
