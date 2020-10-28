@@ -9,14 +9,14 @@ const SearchBar =(props)=>
 
     }
     const clickHandel=(event)=>{
-        event.preventDefualt();
-        props.clickSearchHandel(term);
+        event.preventDefault();
+        props.clickSearchHandeler(term);
 
     }
 
     return (
         <div style={{display:'flex', flexDirection:'row'}}> 
-            <input type="text" value={term} onChange={changeHandel} ></input>
+            <input type="text" placeholder={term} onChange={changeHandel} ></input>
             <div onClick={clickHandel}>
             <img src={Search} alt="search" style={{
                 height:'10px',
