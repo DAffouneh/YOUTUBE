@@ -1,22 +1,31 @@
-import React, {Component} from 'react';
+import React from 'react';
 import classes from './Modal.module.css';
 
-class Modal extends Component {
+const Modal =(props)=>  {
   
-    render()
-    {
+  
        
         return(
+           <div>
+            <div className={classes.Modal} style={{
+      transform: props.show ? 'translateY(0)':'translateY(-100vh)',
+      opacity : props.show ? '1':'0'
+
+ }}>
            
-            <div className={classes.Modal}>
-           
-                {this.props.children}
-    
+                {props.children}
+
             </div>
-    
+            <div className={classes.Triangle} style={{
+      transform: props.show ? 'translateY(0)':'translateY(-100vh)',
+      opacity : props.show ? '1':'0'
+
+ }}></div>
+            
+    </div>
 
         );
-    }
+    
 }
    
 export default Modal;

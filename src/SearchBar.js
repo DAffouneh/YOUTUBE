@@ -16,11 +16,11 @@ const SearchBar =(props)=>
 
     return (
         <div style={{display:'flex', flexDirection:'row'}}> 
-            <input type="text" placeholder={term} onChange={changeHandel} ></input>
+            <input style={{width:'500px'}} type="text" placeholder={term} onChange={changeHandel} ></input>
             <div onClick={clickHandel}>
             <img src={Search} alt="search" style={{
-                height:'10px',
-                width:'10px'
+                height:'20px',
+                width:'20px'
             }}></img>
 
             </div>
