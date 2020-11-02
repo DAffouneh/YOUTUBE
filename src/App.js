@@ -56,8 +56,6 @@ const modalremovalHandler =()=>
   setShow(false)
 
 }
-
-
   return (
     <div>
       <div style={{paddingLeft:'55px'}}>
